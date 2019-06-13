@@ -1,0 +1,2020 @@
+ d444444444444444444444444444444444444444444444444444444444444444444444444444;
+Q4         public class UserCode 
+{
+	public String verfiyAge(int age) throws Exception 
+	{
+	
+		if(age<18)
+		{
+		System.out.println ("Age is less than 18");
+			throw new Exception("AgeMinorException");
+		
+		}
+		else return( "Age Verified");
+		/*
+		 * WAP to accept an age and if the age is less than 18 , raise
+		 * an exception called AgeMinorException with custom message "Age is less than 18".
+		 * else return "Age Verified".
+		 * */
+		
+		
+	}
+}
+
+
+
+Q6;
+
+import java.util.regex.Matcher;
+
+import java.util.regex.Pattern;
+
+public class UserCode 
+{
+	public String validatePassword(String pass) throws PasswordWeakException 
+	{ 
+		String Q="!@#$%^&*()_+-={}|:<>?[];',./'";
+	
+		Pattern p = Pattern.compile(Q);
+		 Matcher m = p.matcher(pass);
+		 boolean b=m.find();
+		 if(b==false)
+		 {
+			 throw new PasswordWeakException("Password Too Weak");
+		 }
+		
+		/*
+		 * WAP to accept a password as argument and check for special characters in it.
+		 * if not found raise a user defined exception PasswordWeakException with custom message
+		 * "Password Too Weak" else return "Valid".
+		 * */
+		
+		return "Valid";
+	
+		
+	}
+}
+
+
+Q8;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class UserCode 
+{
+	public String validatePassword(String pass) throws NoDigitException
+	{
+	String Q="(?=.*[0-9])";
+Pattern w = Pattern.compile(Q);
+Matcher e = w.matcher(pass);
+boolean r=e.find();
+if(r=false)
+{
+	throw new NoDigitException("Digit Not Found");
+	}
+	
+		 return "Valid";
+		 }
+	}
+		 class Digit{public String Digit(String pass) throws NoUppercaseException
+			{
+				
+				
+				String a="(?=.*[A-Z])";
+				Pattern p = Pattern.compile(a);
+				 Matcher m = p.matcher(pass);
+				 boolean b=m.find();
+				 if(b==false)
+				 {
+					 throw new NoUppercaseException("Upper Case Not Found");
+				 }
+		
+		/*
+		 * WAP to accept a password as argument and check for one digit and one upper case letter in it.
+		 * If the Upper Case letter not found raise a user defined exception NoUppercaseException with custom message
+		 * "Upper Case Not Found".
+		 * If the Digit is not found raise a user defined exception NoDigitException with custom message
+		 * "Digit Not Found".
+		 * Else return "Valid"*/
+		
+		    
+	          return "Valid";
+		
+		 }
+		 
+}
+
+public class NoDigitException extends Exception {
+	NoDigitException(String s1){super(s1);}
+}
+
+
+public class NoUppercaseException extends Exception {
+	NoUppercaseException(String s){super (s);}
+}
+
+d777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777;
+
+
+6;;;;;;;
+import java.io.File;
+
+import java.util.Calendar;
+
+public class UserCode {
+
+	
+
+	/*
+	 * Write a Java program to get last modified date, month and year of a file
+	 */
+
+	public static int fileLastModifiedDate(String filePath) {
+
+		// Enter your code here
+		File file=new File(filePath); 
+		long s=file.lastModified();
+		Calendar cal=Calendar.getInstance();
+		cal.setTimeInMillis(s);
+		int d=cal.get(Calendar.DATE);
+		return d;
+		
+	}
+
+	public static int fileLastModifiedMonth(String filePath) {
+		File file=new File(filePath); 
+		long s=file.lastModified();
+		Calendar cal=Calendar.getInstance();
+		cal.setTimeInMillis(s);
+		int d=cal.get(Calendar.MONTH);
+		return d+1;
+	}
+
+	public static int fileLastModifiedYear(String filePath) {
+		// Enter your code here
+		File file=new File(filePath); 
+		long s=file.lastModified();
+		Calendar cal=Calendar.getInstance();
+		cal.setTimeInMillis(s);
+		int d=cal.get(Calendar.YEAR);
+		return d;
+	}
+
+}
+
+8=======================
+
+import java.io.File;
+import java.io.FilenameFilter;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Calendar;
+
+public class UserCode {
+
+	/*
+	 * Write a Java program to get file size in bytes, Kb and mb and return it
+	 * (return 0 if file doesn't exist)
+	 */
+
+	public static long fileSizeInBytes(String filePath) {
+File file=new File(filePath);
+long a=file.length();
+		// Enter your code here
+
+		return a;
+	}
+
+	public static long fileSizeInKb(String filePath) {
+
+		// Enter your code here
+		File file=new File(filePath);
+		long a=(file.length()/1024);
+		return a;
+	}
+
+	public static long fileSizeInMb(String filePath) {
+
+		// Enter your code here
+		File file=new File(filePath);
+		long a=(file.length()/1024)/1024;
+		return a;
+	}
+
+}
+10000000000000000000000000000000000000000000
+
+
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class UserCode {
+
+	public StringBuffer readtextfile(String read) throws Exception {
+		String text = null;
+	    
+	    StringBuffer buffer = new StringBuffer();
+			//File file = new File(read);
+		   if(read.toLowerCase().endsWith(".txt"))
+		   {
+		    BufferedReader reader = null;
+
+		    reader = new BufferedReader(new FileReader(read));
+		    
+
+		 
+		    while ((text = reader.readLine()) != null) {
+		    	
+		      buffer.append(text);
+		      buffer.append(System.lineSeparator());
+		    }
+		    reader.close();
+		    }else{
+		    	throw new FileNotFoundException("File not Found");
+		    	}
+		return buffer;
+		    
+ 
+	}
+		
+	}
+13;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+//Write a Java program to find the longest word in a text file.
+//Output will be the last occurrence of the longest word
+public class UserCode {
+	public static String findLongestWord(String input) throws FileNotFoundException {
+		 String longestWord = "";
+		    String current;
+		    Scanner scan = new Scanner(new File(input));
+
+
+		    while (scan.hasNext()) {
+		        current = scan.next();
+		        if (current.length() > longestWord.length()) {
+		            longestWord = current;
+
+		        }
+		      
+
+		    }
+		
+		    return longestWord;
+
+	}
+}
+14;;;;;;;;;;;;;;;;;;;;Shortest word
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+//Write a Java program to find the Shortest word in a text file.
+
+public class UserCode {
+	public static String findLongestWord(String input) throws FileNotFoundException {
+		 String longestWord = "  ";$$$$$$$$$$$$$$$$$$$$$$
+		    String current;
+		    Scanner scan = new Scanner(new File(input));
+
+
+		    while (scan.hasNext()) {
+		        current = scan.next();
+		        if (current.length() < longestWord.length()) {
+		            longestWord = current;
+
+		        }
+		      
+
+		    }
+		
+		    return longestWord;
+
+	}
+}
+
+17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+/**
+ * 
+ */
+
+
+import java.awt.Desktop;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.Arrays;
+
+
+
+
+public class UserCode {
+	public String[] executeURL(String urlPath){//just a string
+String[] s=new String[6];
+		    // Connect to the URL using java's native library
+		    URI url;
+			try {
+				url = new URI(urlPath);
+				s[0]=url.toString();
+				s[1]=url.getAuthority();
+				s[2]=url.getHost();
+				s[3]= url.getPath();
+				int i=url.getPort();
+				String s1=String.valueOf(i);
+				s[4]= s1;
+				s[5]=url.getRawPath();
+			} catch (URISyntaxException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		//Write a Java program to execute an url and return informtion such as URL string, Authority, Host, Path, Port and RawPath.
+		//urlArray size must be 6
+
+		
+		
+		return s;
+	}
+
+}
+
+
+24;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Write a program to get the name of Empty directory, return name of the directory if its empty else return “Its not an empty Directory”
+
+
+import java.io.File;
+import java.nio.file.DirectoryNotEmptyException;
+
+public class UserCode {
+	public static String getEmptyDirectoryName(String filePath) {
+	 File file=new File(filePath);
+	 if(file.isDirectory())
+	 {
+		 String [] s=file.list();
+		 if(s.length==0){
+			 return file.getName();
+		 }
+		 
+	 }
+		return "Its not an empty Directory";
+		
+	}
+}
+
+d 888888888888888888;;;;;;;;;;;Collections;;;;;;;;;;;;;;
+3;import java.util.ArrayList;
+import java.util.List;
+
+public class UserCode
+{
+	public static int[] commonSet(List<Integer> l1, List<Integer> l2) {
+		List<Integer> c = new ArrayList<>(l1);
+		c.removeAll(l2);
+		List<Integer> d = new ArrayList<>(l2);
+		c.removeAll(d);
+		int res[]=new int[c.size()];
+	int i=0;
+	for(Integer e:c)
+	{
+		res[i++]=e;
+		
+	}return res;
+		/*
+		 * Write a program to collect numbers from list1 which is not present in list2 and collection numbers from list2
+			 which is not present in list1 and store it in an output array. 
+		 * Eg: 
+		 * Input1={1,2,3,4} 
+           Input2={1,2,3,5}
+
+           Output= {4,5}   
+		 */             
+	}
+	
+}
+4;;;;;;;;;;;;;;;;;;;;;;;
+import java.util.*;
+
+public class UserCode {
+	public static float getTheTotalCostOfPheripherals(HashMap<String, String> m1, String[] s) {
+				Set<String> map=m1.keySet();
+				Iterator<String> i=map.iterator();
+				float f = 0;
+				while(i.hasNext())
+				{
+				String str=i.next();
+				
+			
+				float f1=Float.parseFloat(m1.get(str));
+				for(int w=0;w<s.length;w++)
+				{
+					if(s[w].equals(str))
+						f=f+f1;
+				}
+				
+				}
+				
+				return f;
+				
+		/*
+		 * Input HashMap HashMap<String,String>
+		 * input1={"mouse":"100.2","speaker":"500.6","Monitor":"2000.23"};
+		 * String[] s={"speaker","mouse"};
+		 * compare the given string array with Keyset in Map add the values of Corresponding Keyset, 
+		 * output in Float value=600.80(500.6+100.2);
+		 */
+				
+	}
+}
+Q6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+		int merge[]=new int[100];
+		int size=0;
+		 for(int i=0; i<n1.length; i++)
+	       {
+	           merge[i] = n1[i];
+	       }
+		   
+	       size = n1.length + n2.length;
+		   
+	       for(int i=0,  k1=n1.length; k1<size && i<n2.length; i++, k1++)
+	       {
+	           merge[k1] = n2[i];
+	       }
+
+Q8;;;;;;;;;;;;;;;;;;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class UserCode {
+
+
+	public static Map<String,String> examResult(Map<String, Integer> m1)
+	{
+		Map<String,String> map=new HashMap();
+		Set<String> mapSet=m1.keySet();
+		Iterator<String> mapKey=mapSet.iterator();
+		String s1="PASS";
+		String s2="FAIL";
+		while(mapKey.hasNext())
+		{String key=mapKey.next();
+			if(m1.get(key)<60){
+				
+			map.put(key, s2);
+		}
+		else
+		{
+			map.put(key, s1);
+		}}
+		
+	/*	Create a Hashmap accepting String and Integer values
+	  
+	    HashMap<String,Integer> h1={“abc”:50,”efg”:70};
+	    
+	    if the mark is less than 60 make it fail else make it pass.
+	    Put the output in ascending order
+	    
+	    HashMap<String,String> h2={“abc”:”fail”,”efg”:”pass”}.
+	    
+	  
+	    */
+	    
+		return map;
+	}
+	
+}
+ 
+Q9;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+public class UserCode {
+
+	
+	public static String[] loweringCasenReverseofaString(String ip1, char ip2){
+		
+/*		 input-- String input1="AAA/abb/CCC"
+				    char input2='/'
+				    output should be as String[] output1;
+				    output1[]={"aaa","bba","ccc"};
+
+				    operation-- get the strings from input1  using stringtokenizer
+				                reverse each string
+				                then to lower case
+				                finally store it in output1[] string array
+*/
+		for(int i=0;i<ip1.length();i++)
+		{
+			String str=String.valueOf(ip2);  
+			
+		StringTokenizer stz=new StringTokenizer(ip1,str);
+		List<String> list=new ArrayList<>();
+		while(stz.hasMoreTokens())
+		{
+			
+		}
+		//String []str=ip1[i];
+		
+		}
+				                
+		return null;
+	
+	}
+	
+}
+
+Q9;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+public class UserCode {
+
+	
+	public static String[] loweringCasenReverseofaString(String ip1, char ip2){
+		
+		
+/*		 input-- String input1="AAA/abb/CCC"
+				    char input2='/'
+				    output should be as String[] output1;
+				    output1[]={"aaa","bba","ccc"};
+
+				    operation-- get the strings from input1  using stringtokenizer
+				                reverse each string
+				                then to lower case
+				                finally store it in output1[] string array
+*/
+			String s=Character.toString(ip2);
+			StringTokenizer st=new StringTokenizer(ip1,s);
+			ArrayList<String> tokens=new ArrayList<String>();
+			while(st.hasMoreTokens())
+			{
+				StringBuffer sb=new StringBuffer(st.nextToken().toLowerCase());
+				tokens.add(sb.reverse().toString());
+			}
+			String[] output1=new String[tokens.size()];
+			for(int i=0;i<tokens.size();i++)
+			{
+				output1[i]=tokens.get(i);
+			}
+			return output1;
+	
+	}
+	
+}
+
+
+Q10;;;;;;;;;;;;;;;
+
+public class UserCode {
+
+	public static int sumOfSquareOfIndividualDigits(int n1) {
+		
+		/*
+		 * A integer input is accepted. find the square of individual digits and
+		 * find their sum. input:125 output:1*1+2*2+5*5 =30
+		 */
+		int a = n1;
+		int rem = 0;
+		int sum = 0;
+		while (a != 0)
+		{
+		rem = a % 10;
+		sum = sum + (rem * rem);
+		a = a / 10;
+		}
+		
+		return sum;
+	}
+
+}
+
+Q11;;;;;;;;;;;;;;;;;;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class UserCode {
+
+	public static int sumOfEvenNos(int[] a) {
+
+		/*
+		 * Given integer array 
+		 * input :int[] arr={2,3,5,4,1,6,7,7,9}; 
+		 * output : 12
+		 * 
+		 * Remove the duplicate elements and print sum of even numbers in the
+		 * array.. print -1 if arr contains only odd numbers
+		 */
+		int sum=0;
+		int count=0;
+		Set<Integer> list=new TreeSet<Integer>();
+
+		for(int x=0;x<a.length ;x++)
+		{
+			list.add(a[x]);
+		}
+			for(int b:list)
+			{
+				
+			if(b%2==0)
+			{
+				 sum=sum+b; 
+			}
+			else
+			{
+			count++;	
+			}
+			}
+			if(count==list.size()){
+				
+			
+			
+		return -1;}
+			return sum;
+	}
+	
+}
+Q14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.util.List;
+
+public class UserCode {
+	public static int StringsNotOfGivenLength(List<String> l1,String s1){
+		
+		/*An arraylist of Strings is given as input. The count of the String elements that are not of size input2 string is to be returned.
+		 * input1: {"aaa","bb","cccc","d"}
+           input2: "bb"
+           
+           output: 3  ("bb"-length:2)
+		 * 
+		 * */
+		int count=0;
+		int a=s1.length();
+		for(int i=0;i<l1.size();i++)
+		{
+			String s=l1.get(i);
+			int c=s.length();
+			if(a!=c)
+			{
+				count++;
+			}
+		
+		}
+		
+		 
+		
+		return count;
+	}
+
+}
+
+
+Q15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.util.*;
+
+public class UserCode {
+	public static int additionOfnonPrimeNos(int i, int j){
+	/*
+	 * Retrieve the non-prime numbers within the range of a given input.
+	 * Add-up the non-prime numbers and return the result.
+	 Input Range: 0 to 10
+	 Result: 38*/
+		int sum = 0;
+		int k = 0;
+		 
+		for (int i1 = i; i1 <= j; i1++)
+		{
+		k = 0;
+		for (int j1 = 1; j1 <= i1; j1++) 
+		{
+		if (i1 % j1 == 0)
+		k++;
+		}
+		if (k != 2)
+		{
+		sum = sum + i1;
+		}
+		}
+		 
+		return sum;
+		}
+}
+
+Q16;;;;;;;;;;;;;;;
+import java.text.DecimalFormat;
+import java.util.*;
+
+public class UserCode {
+	public static float avgOfEvenKeyValues(Map<Integer, Float> m1) {
+		
+		
+		/*  Input is a map<Integer,Float> {1:2.3,2:5.6,3:7.7,4:8.4}
+		    Get the Even number from keys and find the average of values of these keys.
+		    Answer should be rounded to two numbers after decimal
+		    eg:- if the output number is 15.2499999,it should be rounded upto 15.25
+		 * 
+		 */
+		//Map<Integer,Float>tmap=new TreeMap<Integer,Float>();
+	
+		 float sum = 0;
+		    int count = 0;
+		    DecimalFormat df = new DecimalFormat("#.00");
+		    Iterator<Integer> it = m1.keySet().iterator();
+		    while (it.hasNext()) {
+		      int y = it.next();
+		      if (y % 2 == 0) {
+		        sum = (float) (sum + m1.get(y));
+		        count++;
+		      }
+		    }
+		    float d = sum / count;
+		    double val=Math.round(d*100)/100.00;
+		    return (float)val;
+		  
+		
+	
+	}
+
+}
+Q18;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class UserCode {
+
+	public static Map<String, String> uppercase(String[] temp) {
+		
+		/*Create a program to get the hashmap in ascending order from the given input string array 
+		 * where the key for the hashmap is first three letters of array element 
+		 * in uppercase and the value of hashmap is the element itself
+		 
+		 * Input:{“goa”,”kerala”,”gujarat”}                 [string array]
+   		   Output:{{GOA,goa},{KER,kerala},{GUJ,Gujarat}}    [hashmap]
+	*/	
+		HashMap<String, String> hm = new HashMap<String, String>();
+		ArrayList<String> lst1 = new ArrayList<String>();
+		ArrayList<String> lst2 = new ArrayList<String>();
+		for(String s : temp)
+		lst1.add(s.toUpperCase().substring(0,3));
+		for(String s : temp)
+		lst2.add(s);
+		for(int i=0;i<temp.length;i++)
+		{
+		hm.put(lst1.get(i),lst2.get(i));
+		}
+		
+		return hm;
+		
+		
+		
+		
+		
+	}
+	
+}
+
+Q19;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class UserCode {
+
+	
+	public static int avgValuesOfOddKeys(Map<Integer, Integer> m1) {
+		
+		
+	/*	In a hashmap if key is odd then find average of value as integer
+	 * 
+	    ex1:Input={1:4,2:6,4:7,5:9}
+	        output=(4+9)/2
+	    ex2:Input={1:4,3:6,4:7,5:9}
+	        output=(4+6+9)/3
+	    
+	    If all the keys in input are given as even. Then return 0;
+	 */    
+	        int avg=0,sum=0,count=0;
+	        for(Map.Entry m:m1.entrySet())
+	        {
+	        	int a=(int)m.getKey();
+	        	if(a%2!=0)
+	        	{
+	        		int d=(int)m.getValue();
+	        		sum=sum+d;
+	        		count++;
+	        	}
+	        }
+	        		avg=sum/count;
+		return avg;
+	
+	}
+	
+}
+
+
+
+Q23;;;;;;;;;;;;;;;;;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class SetWorks {
+public String removeDups(String text)
+{
+	String s="";
+	//Set<String> str=new TreeSet<String>();
+	Set<Character> Treeset=new TreeSet<Character>(); 
+
+	for(int x=0;x<text.length();x++)
+	{
+		Treeset.add(text.charAt(x));
+	}
+	for(char s1:Treeset)
+	{
+		s=s+s1;
+	}
+	return s;
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+String text="sometext";
+System.out.println(new SetWorks().removeDups(text));
+	}
+
+}
+Q24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class UserCode {
+
+	
+	public  static String getStr(String[] s1, int ip) {
+
+	
+	/* Print the Third character in the array 
+	 * 	Input1 ={“ABX”,”ac”,”acd","asd”};
+		Input2 =3;
+		Output1=X$d$d  
+    */
+		String fn="";
+		int n=ip-1;
+		for(int i=0;i<s1.length;i++)
+		{
+			String g=s1[i];
+			if(g.length()>=ip)
+			{
+			
+			String o=g.charAt(n)+"$";
+			fn=fn+o;
+			}
+		}
+
+		
+		String val=fn.substring(0, fn.length()-1);
+		return val;
+		
+
+	}
+	
+}
+
+d9         APPLETS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Q1====================;
+import java.awt.Frame;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class UserCode extends JFrame {
+	public void makeFrame(String title) {
+		/*
+		 * Write a Program to Make a Frame with title Passed as Argument. Hint :
+		 * Use JFrame class in swing package
+		 */
+		JFrame frame = new JFrame(title);
+		//JButton b=new JButton(title);
+		//frame.add(title);
+		frame.setVisible(true);
+	}
+}
+
+Q2;;;;;;;;;;;;;;;;;
+import javax.swing.JFrame;
+
+public class UserCode {
+	public void makeFrame(String title, double height, double width) {
+		/*
+		 * Write a Program to Make a Frame with title Passed as Argument. Set
+		 * the height and width based on the argument Hint : Use JFrame class in
+		 * swing package . And use setSize method to set the size.
+		 */
+		JFrame frame = new JFrame(title);
+		int a=(int)width;
+		int b=(int)height;
+		frame.setSize(a,b);
+		frame.setVisible(true);
+	}
+
+	
+}
+Q3;;;;;;;;;;;;;;;;;;;;;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class UserCode 
+{
+			public void makeFrame()
+			{
+				/*
+				 * Write a Program to Make a Frame with title "Sparta".
+				 * Make sure that when you click the close button on frame , the frame getting closed.
+				 * Hint : Use JFrame class in swing package . use the setDefaultCloseOperation method of Frame.
+				 * */
+				JFrame frame = new JFrame("Sparta");
+				//JButton b=new JButton("close");
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setVisible(false);
+				
+
+			}
+}
+
+Q4;;;;;;;;;;;;;;;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class UserCode 
+{
+			public void makeFrame()
+			{
+			
+				/*
+				 * Write a Program to Make a Frame Screen According to the Expected Result.
+				 * Add a Label
+				 */
+				
+				
+						JFrame frame = new JFrame("RAJ");
+						//JButton b=new JButton(title);
+						JPanel p=new JPanel();
+						JLabel lbl=new JLabel("LABEL");
+						
+						frame.setVisible(true);
+						p.setLayout(new GridLayout());
+						p.add(lbl);
+						frame.add(p);
+				
+
+			}
+}
+
+Q5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class UserCode 
+{
+			public void makeFrame()
+			{
+			
+				/*
+				  Write a Program to Make a Frame Screen According to the Expected Result.
+				  Add a Label and TextField
+				 */
+				JFrame frame = new JFrame("RAJ");
+				//JButton b=new JButton(title);
+				JPanel p=new JPanel();
+				JLabel lbl=new JLabel("LABEL");
+				 JTextField textfield = new JTextField(20);
+			        
+				frame.setVisible(true);
+				p.add(lbl);
+				p.add(textfield);
+				frame.add(p);
+			
+			}
+}
+
+Q6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.awt.BorderLayout;
+
+import javax.swing.Box;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class UserCode 
+{
+			public void makeFrame()
+			{
+			
+				/*
+				 * Write a Program to Make a Frame Screen According to the Expected Result.
+				 * Add a Label and TextField and PasswordField
+				 */
+				
+				
+								JFrame frame = new JFrame("Sparta");
+								//JButton b=new JButton(title);
+								JPanel p=new JPanel();
+								JLabel lbl=new JLabel("Enter name");
+								JLabel lb2=new JLabel("Password ");
+
+								 JTextField textfield1 = new JTextField(20);
+								 
+							    JPasswordField Password =new JPasswordField(20);
+								frame.setVisible(true);
+								p.add(lbl);
+								p.add(textfield1);
+								p.add(lb2);
+								p.add(Password);
+								frame.add(p);
+		
+			}
+}
+
+Q7;;;;;;;;;;;;
+import java.awt.GridBagLayout;
+import java.awt.Panel;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class UserCode 
+{
+			public void makeFrame()
+			{
+			
+				/*
+				 * Write a Program to Make a Frame Screen According to the Expected Result.
+				 * Add a Label and TextField and PasswordField and a Button
+				 */
+				
+				JFrame f=new JFrame("Sparta");
+				Panel p=new Panel();
+				JLabel lb1=new JLabel("Enter Name");
+				JTextField t1=new JTextField(10);
+				
+				JLabel lb2=new JLabel("Enter Password");
+				GridBagLayout a=new GridBagLayout();
+				JPasswordField t2=new JPasswordField(10);
+				JButton b=new JButton("Click Me");
+				p.add(lb1);
+				p.add(t1);
+
+				p.add(lb2);
+				p.setLayout(a);
+				p.add(t2);
+				p.add(b);
+
+				f.add(p);
+				f.setVisible(true);
+				
+				
+}
+}
+
+Q8;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.awt.Frame;
+import java.awt.Panel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class UserCode extends Frame  {
+	public void makeFrame(){
+
+		/*
+		 * Write a Program to Make a Frame Screen According to the Expected
+		 * Result. Add a Label and TextField , PasswordField ,ComboBox and a
+		 * Button
+		 */
+		JFrame f=new JFrame("Sparta");
+		Panel p=new Panel();
+		JLabel lb1=new JLabel("Enter Name");
+		JTextField t1=new JTextField(10);
+		
+		JLabel lb2=new JLabel("Enter Password");
+		JLabel lb3=new JLabel("Enter City");
+		
+		JPasswordField t2=new JPasswordField(10);
+		JButton b=new JButton("Click Me");
+		JComboBox c=new JComboBox<>();
+		c.addItem("India");
+		p.setLayout(new BoxLayout(p,BoxLayout.Y_AXIS));
+		p.add(lb1);
+		p.add(t1);
+
+		p.add(lb2);
+	
+		p.add(t2);
+		p.add(lb3);
+		p.add(c);
+		
+		p.add(b);
+		f.add(p);
+		f.setVisible(true);
+		
+		
+	}
+}
+
+Q9;;;;;;;;;;;;;;;;;;;;
+Q10;;;;;;;;;;;;;;;;;;;;
+import java.awt.Panel;
+
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class UserCode 
+{
+			public void makeFrame()
+			{
+			
+				/*
+				 * Write a Program to Make a Frame Screen According to the Expected Result.
+				 * Add Label ,Check Boxes and Button
+				 */
+				
+				JFrame f=new JFrame("Sparta");
+				Panel p=new Panel();
+				JLabel lb1=new JLabel("Select Your Hobbies...");
+				JButton b=new JButton("Register");
+				JCheckBox c=new JCheckBox("Reading");
+				JCheckBox d=new JCheckBox("Sleeping");
+				JCheckBox e=new JCheckBox("Painting");
+				JCheckBox g=new JCheckBox("Travelling");
+				p.add(lb1);
+				
+				p.add(c);
+				p.add(d);
+				p.add(e);
+				p.add(g);
+				p.add(b);				
+				f.add(p);
+				f.setVisible(true);
+			}
+}
+Q11;
+
+import java.awt.Panel;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class UserCode 
+{
+			public void makeFrame()
+			{
+			
+				/*
+				 * Write a Program to Make a Frame Screen According to the Expected Result.
+				 * Add Label ,TextArea and Button
+				 */
+				
+				JFrame f=new JFrame("Sparta");
+				Panel p=new Panel();
+				JLabel lb1=new JLabel("Enter Your Feedback");
+				 JTextField textfield1 = new JTextField(20);
+						 JButton b=new JButton("Submit");
+						 p.add(lb1 );
+						 p.add(textfield1);
+						 p.add(b );
+						 f.add(p);
+						 f.setVisible(true);
+			}
+}
+
+Q12;;;;;;;;;;;;;;;;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Panel;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class UserCode 
+{
+			public void makeFrame()
+			{
+			
+				/*
+				 * Write a Program to Make a Frame Screen According to the Expected Result.
+				 * Add Labels and TextField
+				 * Use GridLayOut to arrange the items in row column format.
+				 */
+				
+
+				JFrame f=new JFrame("Sparta");
+				Panel p=new Panel();
+				JLabel lb1=new JLabel("Name");
+				 JTextField textfield1 = new JTextField(20);
+				 JLabel lb2=new JLabel("City");
+				 JTextField textfield2 = new JTextField(20);
+				 p.setLayout(new GridLayout(2,2));
+				 p.add(lb1 );
+				 p.add(textfield1);
+				 p.add(lb2 );
+				 p.add(textfield2);
+				 f.add(p);
+				 f.setSize(300, 300);
+				 f.setVisible(true);
+			}
+}
+
+Q13;;;;;;;;;;;;;
+import java.awt.GridLayout;
+import java.awt.Panel;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class UserCode 
+{
+			public void makeFrame()
+			{
+			
+				/*
+				 * Write a Program to Make a Frame Screen According to the Expected Result.
+				 * Create a Login Screen
+				 * Use GridLayOut to arrange the items in row column format.
+				 * 
+				 */
+				
+				JFrame f=new JFrame("Sparta");
+				Panel p=new Panel();
+				JLabel lb1=new JLabel("Enter Name");
+				JTextField t1=new JTextField(20);
+				JLabel lb2=new JLabel("Password");
+				JPasswordField t2=new JPasswordField(20);
+				JButton b=new JButton("Login");
+				 p.setLayout(new GridLayout(3,1));
+				p.add(lb1);
+				p.add(t1);
+				p.add(lb2);
+				p.add(t2);
+				p.add(b);
+				 f.setSize(100, 100);
+				f.add(p);
+				f.setVisible(true);
+			}
+}
+
+Q14;;;;;;;;;;;;;
+import java.awt.GridLayout;
+import java.awt.Panel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class UserCode 
+{
+			public void makeFrame()
+			{
+			
+				/*
+				 * Write a Program to Make a Frame Screen According to the Expected Result.
+				 * Create a Login Screen
+				 * Use GridLayOut to arrange the items in row column format.
+				 * When you click on the login button if name is "sa" and password is "pass" display a dialog box with "Valid User"
+				 */
+		
+				
+
+				JFrame f=new JFrame("Sparta");
+				Panel p=new Panel();
+				JLabel lb1=new JLabel("Enter Name");
+				JTextField t1=new JTextField(20);
+				JLabel lb2=new JLabel("Password");
+				JLabel lb3=new JLabel("         ");
+				JPasswordField t2=new JPasswordField(20);
+				JButton b=new JButton("Login");
+				 p.setLayout(new GridLayout(3,2));
+				p.add(lb1);
+				p.add(t1);
+				p.add(lb2);
+				p.add(t2);
+				p.add(lb3);
+			
+				p.add(b);
+				 f.setSize(100, 100);
+				f.add(p);
+				f.setVisible(true);
+				b.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						String s=t1.getText();
+						String s1=t2.getText();
+						if(s.equals("sa")&&s1.equals("pass") )
+						JOptionPane.showMessageDialog(f, "Valid User");
+					}
+				});
+				
+			}
+}
+
+Q15;;;;;;;;;
+
+
+
+
+**************************************************************JDBC***************************************************************************
+Q13;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.sql.*;
+public class UserCode 
+{
+    public boolean alterTable(String columnName[])
+    {
+    	
+    	
+    	String colname = null;
+	     boolean isDone=false;
+	     int a=0;
+    	/*
+    	 * WAP to alter the table in the database by adding the varchar(20) columns ,column names will be passed as array.
+    	 * Table Name: Employee
+    	 * Existing Columns : EmpNo,FirstName,LastName,Job
+    	 */ 
+	     try{
+	     Class.forName("com.mysql.jdbc.Driver");
+	     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tempdb","root","dsrc");
+	     for(int i=0;i<columnName.length;i++)
+	     {
+	    	 colname=columnName[i];
+	    	 PreparedStatement ps=con.prepareStatement(("Alter table Employee add column ")+colname+(" varchar(20)"));
+	    	 a=ps.executeUpdate();
+	     }
+	  
+	 
+	 
+	   
+		   isDone=true;
+	   
+	    }
+        catch(ClassNotFoundException e)
+	     {
+        	
+	     }
+	     catch(SQLException e)
+	     {
+	    	 e.printStackTrace();
+	     }
+    	    	  return isDone;
+    	   }
+    	
+    	
+    	
+    	
+    	
+    	
+    }
+
+Q14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.sql.*;
+
+
+
+public class UserCode 
+{
+    public boolean deleteRecord(int empno)
+    {
+    	boolean isDone=false;
+    	/*
+    	 * WAP to delete a row from the following table based on EmpNo passed as argument.
+    	 * Table Name: Employee
+    	 * Columns :   EmpNo int,FirstName varchar(20),LastName varchar(20)		
+    	 */ 
+    	
+    		     try{
+    		     Class.forName("com.mysql.jdbc.Driver");
+    		     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tempdb","root","dsrc");
+    		    	 PreparedStatement ps=con.prepareStatement(("Delete from Employee where EmpNo= "+empno));
+    		    	 int a=ps.executeUpdate();
+    		      isDone=true;
+    		   
+    		    }
+    	        catch(ClassNotFoundException e)
+    		     {
+    	        	
+    		     }
+    		     catch(SQLException e)
+    		     {
+    		    	 e.printStackTrace();
+    		     }
+    	    	    	  return isDone;
+    	    	   }
+    	    	
+    
+}
+
+Q15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.sql.*;
+
+
+
+public class UserCode 
+{
+    public boolean nullifyRecord(int empno)
+    {
+    	boolean isDone=false;
+    	/*
+    	 * WAP to nullify the LastName of a row in the Employee table based on EmpNo passed as argument.
+    	 * Table Name: Employee
+    	 * Columns :   EmpNo int,FirstName varchar(20),LastName varchar(20)		
+    	 */ 
+    	
+   // Fill ur Code
+		
+    	
+    	    		     try{
+    	    		     Class.forName("com.mysql.jdbc.Driver");
+    	    		     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tempdb","root","dsrc");
+    	    		    	 PreparedStatement ps=con.prepareStatement(("Update Employee set LastName=null where EmpNo= "+empno));
+    	    		    	 int a=ps.executeUpdate();
+    	    		      isDone=true;
+    	    		   
+    	    		    }
+    	    	        catch(ClassNotFoundException e)
+    	    		     {
+    	    	        	
+    	    		     }
+    	    		     catch(SQLException e)
+    	    		     {
+    	    		    	 e.printStackTrace();
+    	    		     }
+    	    	    	    	  return isDone;
+    	    	    	   }
+    	    	    	
+    	    
+    
+}
+
+Q16;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.sql.*;
+
+
+
+public class UserCode 
+{
+    public boolean insertRecord(int deptno,String deptName,String Location)
+    {
+    	/*
+    	 * WAP to insert a row into the following table passed as argument
+    	 * Table Name: Department
+    	 * Columns :   DeptNo int , DeptName varchar(20) , Location varchar(20)		
+    	 */ 
+    	
+    	//Fill your Code
+    	boolean isDone=false;
+    	   try{
+    	    	    		     Class.forName("com.mysql.jdbc.Driver");
+    	    	    		     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tempdb","root","dsrc");
+    	    	    		    	 PreparedStatement ps=con.prepareStatement("insert into Department values(?,?,?)");
+    	    	    		    	 ps.setInt(1, deptno);
+    	    	    		    	 ps.setString(2,deptName);
+    	    	    		    	 ps.setString(3,Location);
+    	    	    		    	 int a=ps.executeUpdate();
+    	    	    		      isDone=true;
+    	    	    		   
+    	    	    		    }
+    	    	    	        catch(ClassNotFoundException e)
+    	    	    		     {
+    	    	    	        	
+    	    	    		     }
+    	    	    		     catch(SQLException e)
+    	    	    		     {
+    	    	    		    	 e.printStackTrace();
+    	    	    		     }
+    	    	    	    	    	  return isDone;
+    	    	    	    	   }
+    	    	    	    	
+    	    	    
+    	    
+
+    	
+    	
+  }
+
+Q17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.sql.*;
+
+
+
+public class UserCode 
+{
+    public boolean insertRecord(int deptno,String Location)
+    {
+    	boolean isDone=false;
+    	/*
+    	 * WAP to insert a row into the following table passed as argument(Only DeptNo and Location to be inserted)
+    	 * Table Name: Department
+    	 * Columns :   DeptNo int , DeptName varchar(20) , Location varchar(20)		
+    	 */ 
+    	
+    	//Fill your Code
+
+
+    	    	   try{
+    	    	    	    		     Class.forName("com.mysql.jdbc.Driver");
+    	    	    	    		     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tempdb","root","dsrc");
+    	    	    	    		    	 PreparedStatement ps=con.prepareStatement("insert into Department(deptno, Location) values(?,?)");
+    	    	    	    		    	 ps.setInt(1, deptno);
+    	    	    	    		   
+    	    	    	    		    	 ps.setString(2,Location);
+    	    	    	    		    	 int a=ps.executeUpdate();
+    	    	    	    		      isDone=true;
+    	    	    	    		   
+    	    	    	    		    }
+    	    	    	    	        catch(ClassNotFoundException e)
+    	    	    	    		     {
+    	    	    	    	        	
+    	    	    	    		     }
+    	    	    	    		     catch(SQLException e)
+    	    	    	    		     {
+    	    	    	    		    	 e.printStackTrace();
+    	    	    	    		     }
+    	    	    	    	    	    	  return isDone;
+    	    	    	    	    	   }
+    	    	    	    	    	
+    	    	    	    
+    	    	    
+
+    	    	
+
+}
+
+Q18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import java.sql.*;
+
+
+public class UserCode 
+{
+    public List<String> getNames(String job)
+    {
+    	List<String> temp=null;
+    	temp=new LinkedList<String>(); 
+    	
+    	/*
+    	 * WAP to return the First Names of employees based on the Job Passed as 
+    	 * Arguments from the Employee Table.
+    	 */ 
+    	
+    	//Fill your Code
+    	try{
+    	    	    	    	    		     Class.forName("com.mysql.jdbc.Driver");
+    	    	    	    	    		     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tempdb","root","dsrc");
+    	    	    	    	    		     
+    	    	    	    	    		    	 PreparedStatement ps=con.prepareStatement("select FirstName from Employee where job="+temp);
+    	    	    	    	    		    	 //ps.setString(1, temp);
+    	    	    	    	    		   
+    	    	    	    	    		    	 ResultSet re=ps.executeQuery();
+    	    	    	    	    		      
+    	    	    	    	    		   while(re.next())
+    	    	    	    	    		   {
+    	    	    	    	    			   temp.add(re.getString(1));
+    	    	    	    	    		   }
+    	    	    	    	    		    }
+    	    	    	    	    	        catch(ClassNotFoundException e)
+    	    	    	    	    		     {
+    	    	    	    	    	        	
+    	    	    	    	    		     }
+    	    	    	    	    		     catch(SQLException e)
+    	    	    	    	    		     {
+    	    	    	    	    		    	 e.printStackTrace();
+    	    	    	    	    		     }
+    	    	    	    	    	    	
+    	    	    	    
+
+    	    	    	
+
+    	
+    return temp;
+    	
+    }
+}
+
+Q19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.sql.*;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+
+
+public class UserCode 
+{
+    public Map<Integer,String> getDetails()
+    {
+    	Map<Integer,String> temp=null;
+    	
+    	/*
+    	 * WAP to return a map contain EmpNo and FirstName of all employees from Employee table.
+    	 * Store the Empno's in the ascending order .
+    	 * Hint : use TreeMap
+    	 */ 
+    	
+    	//Fill your Code
+    	
+	temp=new TreeMap<Integer, String>(); 
+
+    	try{
+    	    	    	    	    		     Class.forName("com.mysql.jdbc.Driver");
+    	    	    	    	    		     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tempdb","root","dsrc");
+    	    	    	    	    		     
+    	    	    	    	    		    	 PreparedStatement ps=con.prepareStatement("select EmpNo, FirstName from Employee");
+    	    	    	    	    		    	 //ps.setString(1, temp);
+    	    	    	    	    		   
+    	    	    	    	    		    	 ResultSet re=ps.executeQuery();
+    	    	    	    	    		      
+    	    	    	    	    		   while(re.next())
+    	    	    	    	    		   {
+    	    	    	    	    			   int s=re.getInt(1);
+    	    	    	    	    			  String s1=re.getString(2);
+    	    	    	    	    			  temp.put(s,s1);
+    	    	    	    	    		   }
+    	    	    	    	    		    }
+    	    	    	    	    	        catch(ClassNotFoundException e)
+    	    	    	    	    		     {
+    	    	    	    	    	        	
+    	    	    	    	    		     }
+    	    	    	    	    		     catch(SQLException e)
+    	    	    	    	    		     {
+    	    	    	    	    		    	 e.printStackTrace();
+    	    	    	    	    		     }
+   return temp;
+    	
+    }
+}
+
+Q20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+import java.sql.*;
+
+
+public class UserCode 
+{
+    public Map<Integer,String> getDetails()
+    {
+    	Map<Integer,String> temp=null;
+    	
+    	/*
+    	 * WAP to return a map contain EmpNo and FirstName of all employees from Employee table whose FirstName starts with 'A'
+    	 * Store the Empno's in the ascending order .
+    	 * Hint : use TreeMap
+    	 */ 
+    	
+    	    	
+    		temp=new TreeMap<Integer, String>(); 
+
+    	    	try{
+    	    	    	    	    	    		     Class.forName("com.mysql.jdbc.Driver");
+    	    	    	    	    	    		     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tempdb","root","dsrc");
+    	    	    	    	    	    		     
+    	    	    	    	    	    		    	 PreparedStatement ps=con.prepareStatement("select EmpNo, FirstName from Employee where FirstName like 'A%'");
+    	    	    	    	    	    		    	 //ps.setString(1, temp);
+    	    	    	    	    	    		   
+    	    	    	    	    	    		    	 ResultSet re=ps.executeQuery();
+    	    	    	    	    	    		      
+    	    	    	    	    	    		   while(re.next())
+    	    	    	    	    	    		   {
+    	    	    	    	    	    			   int s=re.getInt(1);
+    	    	    	    	    	    			  String s1=re.getString(2);
+    	    	    	    	    	    			  temp.put(s,s1);
+    	    	    	    	    	    		   }
+    	    	    	    	    	    		    }
+    	    	    	    	    	    	        catch(ClassNotFoundException e)
+    	    	    	    	    	    		     {
+    	    	    	    	    	    	        	
+    	    	    	    	    	    		     }
+    	    	    	    	    	    		     catch(SQLException e)
+    	    	    	    	    	    		     {
+    	    	    	    	    	    		    	 e.printStackTrace();
+    	    	    	    	    	    		     }
+    	  
+    	
+    	   return temp;
+    	
+    }
+}
+
+Q21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.sql.*;
+
+
+
+public class UserCode 
+{
+    public boolean updateRecord(int deptNo,String deptName)
+    {
+    	
+    	/*Write a Program to update a row into the following table (Update DeptName based on DeptNo passed)
+
+    	Table Name: Department
+
+    	Precondition : 
+    	i)Table “Department” with column name should present
+    	ii)Value should be inserted
+    	iii)inserted value to be updated. 
+        Columns :   DeptNo int , DeptName varchar(20) , Location varchar(20)  	*/ 
+    	
+    	//Fill ur Code
+         boolean isDone=false;
+         
+         try{
+ 		     Class.forName("com.mysql.jdbc.Driver");
+ 		     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tempdb","root","dsrc");
+ 		    	 PreparedStatement ps=con.prepareStatement("Update Department set deptno=?, DeptName=?) values(?,?)");
+ 		    	 ps.setInt(1, deptNo);
+ 		   
+ 		    	 ps.setString(2,deptName);
+ 		    	 int a=ps.executeUpdate();
+ 		      isDone=true;
+ 		   
+ 		    }
+ 	        catch(ClassNotFoundException e)
+ 		     {
+ 	        	
+ 		     }
+ 		     catch(SQLException e)
+ 		     {
+ 		    	 e.printStackTrace();
+ 		     }
+ 	    	    	  return isDone;
+ 	    	   }
+
+}
+
+Q22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.sql.*;
+
+
+
+public class UserCode 
+{
+    public boolean updateRecord(int deptNo,String deptName)
+    {
+    	
+    	/*Write a Program to update a row into the following table (Update DeptName based on DeptNo passed)
+
+    	Table Name: Department
+
+    	Precondition : 
+    	i)Table “Department” with column name should present
+    	ii)Value should be inserted
+    	iii)inserted value to be updated. 
+        Columns :   DeptNo int , DeptName varchar(20) , Location varchar(20)  	*/ 
+    	
+    	//Fill ur Code
+         boolean isDone=false;
+         
+         try{
+ 		     Class.forName("com.mysql.jdbc.Driver");
+ 		     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tempdb","root","dsrc");
+ 		    	 PreparedStatement ps=con.prepareStatement("Update Department set DeptName=? where  deptno=?");
+ 		    	ps.setString(1,deptName);
+ 		    	 ps.setInt(2, deptNo);
+ 		   
+ 		    	 
+ 		    	 int a=ps.executeUpdate();
+ 		      isDone=true;
+ 		   
+ 		    }
+ 	        catch(ClassNotFoundException e)
+ 		     {
+ 	        	
+ 		     }
+ 		     catch(SQLException e)
+ 		     {
+ 		    	 e.printStackTrace();
+ 		     }
+ 	    	    	  return isDone;
+ 	    	   }
+
+}
+
+Q23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.sql.*;
+
+
+
+public class UserCode 
+{
+    public boolean insertRecord(int depNo,String deptName,String loc)
+    {
+    	boolean isDone=false;
+    	/*
+    	 * WAP to insert a row into the following table (values passed as arguments)
+    	 	 Table Name: Department
+    	 Columns : DeptNo int primary key 
+                   DeptName varchar(20)
+                   Location varchar(20)
+    	 */ 
+    	
+    	         try{
+    	 		     Class.forName("com.mysql.jdbc.Driver");
+    	 		     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tempdb","root","dsrc");
+    	 		    	 PreparedStatement ps=con.prepareStatement("insert into Department(deptno,deptName Location) values(?,?,?)");
+    	 		    	ps.setInt(1,depNo);
+    	 		    	 ps.setString(2, deptName);
+    	 		    	 ps.setString(3, loc);
+    	 		    	 
+    	 		    	 int a=ps.executeUpdate();
+    	 		      isDone=true;
+    	 		   
+    	 		    }
+    	 	        catch(ClassNotFoundException e)
+    	 		     {
+    	 	        	
+    	 		     }
+    	 		     catch(SQLException e)
+    	 		     {
+    	 		    	 e.printStackTrace();
+    	 		     }
+    	 	    	    	  return isDone;
+    	 	    	   }
+
+    
+
+    	
+    }
+
+Q24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+
+
+public class UserCode 
+{
+    public Map<Integer,String> getDetails()
+    {
+    	Map<Integer,String> temp=null;
+    	
+    	/*
+    	WAP to return a map contain DepNo and DeptName of all from Department table whose DeptName starts with 'C' and
+    	ends with 'l',
+    	Store the DepNo's in the ascending order .
+    	Hint : use TreeMap
+    	 */ 
+    	//Fill ur Code
+
+		temp=new TreeMap<Integer, String>(); 
+
+	    	try{
+	    	    	    	    	    		     Class.forName("com.mysql.jdbc.Driver");
+	    	    	    	    	    		     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tempdb","root","dsrc");
+	    	    	    	    	    		     
+	    	    	    	    	    		    	 PreparedStatement ps=con.prepareStatement("select EmpNo, FirstName from Employee where FirstName like 'C%l'");
+	    	    	    	    	    		    	 //ps.setString(1, temp);
+	    	    	    	    	    		   
+	    	    	    	    	    		    	 ResultSet re=ps.executeQuery();
+	    	    	    	    	    		      
+	    	    	    	    	    		   while(re.next())
+	    	    	    	    	    		   {
+	    	    	    	    	    			   int s=re.getInt(1);
+	    	    	    	    	    			  String s1=re.getString(2);
+	    	    	    	    	    			  temp.put(s,s1);
+	    	    	    	    	    		   }
+	    	    	    	    	    		    }
+	    	    	    	    	    	        catch(ClassNotFoundException e)
+	    	    	    	    	    		     {
+	    	    	    	    	    	        	
+	    	    	    	    	    		     }
+	    	    	    	    	    		     catch(SQLException e)
+	    	    	    	    	    		     {
+	    	    	    	    	    		    	 e.printStackTrace();
+	    	    	    	    	    		     }
+	  
+    	return temp;
+    }
+}
+
+Q25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class UserCode 
+{
+    public boolean alterTable(String columnName[])
+    {
+    	
+    	
+    	String colname = null;
+	     boolean isDone=false;
+    	/*
+    	 * WAP to alter the table in the database by adding the varchar(20) columns ,column names will be passed as array.
+    	 * Table Name: Department
+    	 * Existing Columns : DeptNo int, 
+DeptName varchar(20), 
+Location varchar(20)
+    	 */ 
+	     try{
+		     Class.forName("com.mysql.jdbc.Driver");
+		     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tempdb","root","dsrc");
+		     for(int i=0;i<columnName.length;i++)
+		     {
+		    	 colname=columnName[i];
+		    	 PreparedStatement ps=con.prepareStatement(("Alter table Employee add column ")+colname+(" varchar(20)"));
+		    	int a=ps.executeUpdate();
+		     }
+		  
+		 
+		 
+		   
+			   isDone=true;
+		   
+		    }
+	        catch(ClassNotFoundException e)
+		     {
+	        	
+		     }
+		     catch(SQLException e)
+		     {
+		    	 e.printStackTrace();
+		     }
+	    	    	  return isDone;
+	    	   }
+	    	
+    	
+    	
+    	
+    	
+    }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    

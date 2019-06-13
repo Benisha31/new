@@ -1,0 +1,1047 @@
+DAY !!!!!!!!!11111111111!!!!!!!!!SERVLET!!!!!!!!!!!!!!!!!!!!!!!
+
+Q1'''''''''''''''''''''''''''''''''
+package com.dsrc;
+
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class HelloServlet
+ */
+@WebServlet("/jfhg")
+public class jfhg extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+   
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		PrintWriter a=response.getWriter();
+		a.println("Hello World");
+		
+	}
+
+	
+}
+Q2;;;;;;;;;;;;;;;;;;;;;;;;;
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="HelloServlet" method="get">
+<input type="submit" value="Click Me">
+</form>
+</body>
+</html>
+SERVLET
+package com.dsrc;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class HelloServlet
+ */
+@WebServlet("/HelloServlet")
+public class HelloServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+  
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		PrintWriter a=response.getWriter();
+		a.println("Hello World");
+	
+	}
+
+	
+	
+
+}
+
+
+Q3;;;;;;;;;;;;;;;;;;;;;;;;;
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="HelloServlet" method="get">
+<input type="text" name="q">
+<input type="submit" value="Click Me">
+</body>
+</html>
+
+SERVLET
+package com.dsrc;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class NameServlet
+ */
+@WebServlet("/NameServlet")
+public class NameServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		PrintWriter a=response.getWriter();
+		String s=request.getParameter("q");
+		a.println("Hello World");
+		
+	}
+
+	}
+
+
+
+
+Q4;;;;;;;;;;;;;;;;;;;;;;;;;
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="LoginServlet" >
+	Login Name<input type="text" name="q">
+	Password<input type="password" name="p">
+	<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
+
+
+SERVLET
+package com.dsrc;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class LoginServlet
+ */
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+   
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	PrintWriter out=response.getWriter();
+	String q=request.getParameter("q");
+	String p=request.getParameter("p");
+	if(q.equals("sa")&&p.equals("pass@123"))
+	{
+		out.println("Valid User");
+	}
+	else
+	{
+		out.println("Invalid User");
+	}
+	}
+
+}
+
+
+
+
+Q5;;;;;;;;;;;;;;;;;;;;;;;;;
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="LoginServlet" >
+	Login Name<input type="text" name="q">
+	Password<input type="password" name="p">
+	<input type="submit" value="Login">
+	</form>
+
+</body>
+</html>
+
+
+SERVLET
+package com.dsrc;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class LoginServlet
+ */
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		PrintWriter out=response.getWriter();
+		String q=request.getParameter("q");
+		String p=request.getParameter("p");
+		if(q.equals("sa")&&p.equals("pass@123"))
+		{
+			out.println("<font color=green> Valid User</font>");
+		}
+		else
+		{
+			out.println("<font color=red>Invalid User</font>");
+		}
+		
+		
+	}
+
+	
+}
+
+
+
+Q6;;;;;;;;;;;;;;;;;;;;;;;;;
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>  
+<body>
+		<form action="MultiplicationServlet" method="get">
+		Enter Number<input type="text" name="q">
+		<input type="submit" value="Submit">
+</body>
+</html>
+
+
+SERVLET
+package com.dsrc;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class MultiplicationServlet
+ */
+@WebServlet("/MultiplicationServlet")
+public class MultiplicationServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+ 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		PrintWriter out=response.getWriter();
+		String name=request.getParameter("q");
+		//String pass=request.getParameter("password");
+		
+		int n=Integer.parseInt(name);
+		out.println("<html><body><table border=1 width=30%>");
+		for(int k=1;k<=12;k++)
+		{
+			out.println("<tr><td>"+n+"</td><td>X</td><td>"+k+"</td><td>=</td><td>"+n*k+"</tr></tr>");
+			
+			//response.sendRedirect("home.html");
+		}
+		if(n==0)
+		{
+			out.println("<font color =red>Invalid Number</font>");
+		}
+		
+		out.println("</html></body></table>");
+	}
+
+	
+}d222222222222222222222222222;';;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Q1;;;;;;;;;;;;;;;;;;;;;;;;;;
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="LoginServlet" >
+<center>
+<table border=0 width="40%">
+	
+	<tr><td>Login Name</td><td><input type="text" name="q"></td></tr>
+	<tr><td>Password</td><td><input type="password" name="p"></td></tr>
+	<tr><td><input type="submit" value="Login"></td></tr>
+
+
+	</table>
+	</center>
+		</form>
+
+</body>
+</html>
+SERVLET
+package com.dsrc;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class LoginServlet1
+ */
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		PrintWriter out=response.getWriter();
+		String q=request.getParameter("q");
+		String p=request.getParameter("p");
+		if(q.equals("sa")&&p.equals("pass@123"))
+		{
+			out.println(" Welcome User");
+		}
+		else
+		{
+			out.println("Invalid User");
+		}
+		
+	}
+
+	
+
+}
+
+Q2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+SERVLET
+PrintWriter out=response.getWriter();
+		String q=request.getParameter("q");
+		String p=request.getParameter("p");
+		if(q.equals("sa")&&p.equals("pass"))
+		{
+			response.sendRedirect("home.html");
+		}
+		else
+		{
+			out.println("Invalid User");
+		}
+
+Q3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+HTML
+HOME.HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Welcome User</h1>
+</body>
+</html>
+
+ERROR.HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<font color="red">Invalid User</font>
+</body>
+</html>
+
+SERVLET
+package com.dsrc;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class LoginServlet1
+ */
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		PrintWriter out=response.getWriter();
+		String q=request.getParameter("q");
+		String p=request.getParameter("p");
+		if(q.equals("sa")&&p.equals("pass"))
+		{
+			response.sendRedirect("home.html");
+		}
+		else
+		{
+			response.sendRedirect("error.html");
+		}
+		
+	}
+
+	
+
+}
+
+
+Q4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="LoginServlet" >
+<center>
+<table border=0 width="40%">
+	
+	<tr><td>Login Name</td><td><input type="text" name="q"></td></tr>
+	<tr><td>Password</td><td><input type="password" name="p"></td></tr>
+	<tr><td>Role</td>
+	<td><select name="Role">
+
+	<option>Admin </option>
+	<option>User</option>
+	</select></td></tr>
+	<td><input type="submit" value="Login"></td>
+	</table>
+	</center>
+		</form>
+
+</body>
+</html>
+
+ADMIN
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+Welcome Admin
+</body>
+</html>
+
+USER
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+Welcome User
+</body>
+</html>
+
+SERVLET
+
+package com.dsrc;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class LoginServlet
+ */
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+  
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		PrintWriter out=response.getWriter();
+		String q=request.getParameter("q");
+		String p=request.getParameter("p");
+		String a=request.getParameter("Role");
+		if(q.equals("sa")&&p.equals("pass"))
+		{
+			
+		
+		if(a.equals("Admin"))
+		{
+			response.sendRedirect("Adminhome.html");
+		}
+		if(a.equals("User"))
+		{
+			response.sendRedirect("Userhome.html");
+		}
+		}
+		else 
+		{
+			response.sendRedirect("error.html");
+		}
+		
+	}
+
+}
+
+
+Q5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>  
+<body>
+		<form action="MultiplyTableServlet" method="get">
+		Enter Number<input type="text" name="q">
+		<input type="submit" value="Submit">
+</body>
+</html>
+
+SERVLET
+package com.dsrc;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class MultiplicationServlet
+ */
+@WebServlet("/MultiplyTableServlet")
+public class MultiplyTableServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+ 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		PrintWriter out=response.getWriter();
+		String name=request.getParameter("q");
+		//String pass=request.getParameter("password");
+		
+		int n=Integer.parseInt(name);
+		out.println("<html><body><table border=1 width=30%>");
+				
+		for(int k=1;k<=12;k++)
+		{
+			out.println("<tr><td>"+n+"</td><td>X</td><td>"+k+"</td><td>=</td><td>"+n*k+"</tr></tr>");
+			
+			//response.sendRedirect("home.html");
+		}
+		if(n==0)
+		{
+			out.println("<font color =red>Invalid Number</font>");
+		}
+		
+		out.println("</html></body></table>");
+	}
+	
+}
+
+Q6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="GetServlet" >
+<center>
+<table border=0 width="40%">
+	<tr><td>Select Country</td>
+	<td><select name="Role">
+<option> India </option>
+	<option>USA</option>
+	<option>Australia </option>
+	
+	</select>
+	<input type="submit" value="Submit"></td></tr>
+	</table>
+	</center>
+		</form>
+</body>
+</html>
+SERVLET
+package com.dsrc;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class LoginServlet
+ */
+@WebServlet("/GetServlet")
+public class GetServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+   
+	protected void doGet(HttpServletRequest request, Http
+ServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+
+		PrintWriter out=response.getWriter();
+		String q=request.getParameter("Role");
+		
+		if(q.equals("India"))
+		{
+			out.print("<body><center><h1>Cities</h1> Chennai, Bengaluru , Cochin</center></body>");
+		}
+		else if(q.equals("USA"))
+		{
+			out.print("<body><center><h1>Cities</h1>Atlanta , Chicago , Dallas ,Florida</center></body>");
+		}
+		else if(q.equals("Australia"))
+		{
+			out.print("<body><center><h1>Cities</h1> Sidny , Canbara</center></body>");
+		}
+	}
+
+	
+
+
+Q7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+		<form action="LoginServlet" >
+<center>
+<table border=0 width="40%">
+	<tr><td>Select Country</td>
+	<td><select name="Role">
+<option> India </option>
+	<option>USA</option>
+	<option>Australia </option>
+	
+	</select>
+	<input type="submit" value="Submit"></td></tr>
+	</table>
+	</center>
+		</form>
+</body>
+</html>
+
+SERVLET
+package com.dsrc;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class LoginServlet
+ */
+@WebServlet("/LoginServlet")
+public class MultiplyTableServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+
+				PrintWriter out=response.getWriter();
+				String q=request.getParameter("Role");
+				
+				if(q.equals("India"))
+				{
+					out.print("<body><center><h1>Cities</h1><select><option> Chennai</option> <option>  Bengaluru </option>  <option> Cochin</option></select> </center></body>");
+				}
+				else if(q.equals("USA"))
+				{
+					out.print("<body><center><h1>Cities</h1><select><option> Atlanta </option> <option>  Chicago </option>  <option> Dallas </option> <option> Florida</option> </select></center></body>");
+				}
+				else if(q.equals("Australia"))
+				{
+					out.print("<body><center><h1>Cities</h1> <select><option> Sidny</option> <option>  Canbara</option> </select></center></body>");
+				}
+			}
+}
+
+
+Q8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+		<form action="DisplayServlet" >
+<center>
+<table border=0 width="40%">
+	<tr><td>Select Country</td>
+	<td><select name="Role">
+<option> India </option>
+	<option>USA</option>
+	<option>Australia </option>
+	
+	</select>
+	<input type="submit" value="Submit"></td></tr>
+	</table>
+	</center>
+		</form>
+</body>
+</html>
+
+SERVLET
+DISPLAYSERVLET
+
+package com.dsrc;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class DisplayServlet
+ */
+@WebServlet("/DisplayServlet")
+public class DisplayServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public DisplayServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		PrintWriter out=response.getWriter();
+		String q=request.getParameter("Role");
+		
+		if(q.equals("India"))
+		{
+			
+			out.print("<html><body><form action=GetCityServlet>"
+					+ "<center><h1>Cities</h1><select name=1><input type=hidden name=Role value="+q+">"
+					+ "<option> Chennai</option> "
+					+ "<option>  Bengaluru </option> "
+					+ " <option> Cochin</option></select> "
+					+ "<input type=submit value=Submit>"
+					+ "</center></form></body></html>");
+		}
+		else if(q.equals("USA"))
+		{
+			out.print("<html><body><form action=GetCityServlet>"
+					+ "<center><h1>Cities</h1><input type=hidden name=Role value="+q+">"
+					+ "<select name=1><option> Atlanta </option>"
+					+ " <option>  Chicago </option>  <option> Dallas </option>"
+					+ " <option> Florida</option> </select>"
+					+ "<input type=submit value=Submit></center></form></body></html>");
+		}
+		else if(q.equals("Australia"))
+		{
+			out.print("<html><body><form action=GetCityServlet><center>"
+					+ "<h1>Cities</h1><input type=hidden name=Role value="+q+">"
+					+ " <select name =1><option> Sidny</option>"
+					+ " <option>  Canbara</option></select>"
+					+ "<input type=submit value=Submit></center></form></body></html>");
+		}
+	}
+		
+	
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+GETSERVLET
+
+package com.dsrc;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class GetCityServlet
+ */
+@WebServlet("/GetCityServlet")
+public class GetCityServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		PrintWriter out=response.getWriter();
+		String q=request.getParameter("1");
+		String w=request.getParameter("Role");
+	out.println("<html><body><center><table border =1><h1>Summary</h1>");
+	out.print("<tr><td>Country</td><td>"+w+"</td></tr>");
+	out.print("<tr><td>City</td><td>"+q+"</td></tr></table></center></body></html>");
+
+	
+	}
+
+	
+}
+
+
+Q9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+		<form action="LoginServlet" >
+<center>
+<table border=0 width="40%">
+<h1>Registration</h1>
+<tr><td>Login Name</td><td><input type="text" name="l"></td></tr>
+	<tr><td>Password</td><td><input type="password" name="p"></td></tr>
+	<tr><td>Age</td><td><input type="text" name="a"></td></tr>
+	<tr><td>Gender</td><td><input type="radio" value="M" name="q">M
+	<input type="radio" value="F" name="q">F</td></tr>
+	<tr><td>Select Country</td>
+	<td><select name="Role">
+<option> India </option>
+	<option>USA</option>
+	<option>Australia </option>
+	</select></td></tr>
+	<tr><td>Address</td><td><textarea rows="4" cols="10" name="a"></textarea></td></tr>
+	<tr><td>Email</td><td><input type="text" name="e"></td></tr>
+	<tr><td></td><td><input type="submit" value="Submit"></td></tr>
+	</table>
+	</center>
+		</form>
+</body>
+</html>
+
+
+
+Q10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+HTML
+REG HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+		<form action="DisplayServlet" >
+<center>
+<table border=0 width="40%">
+<h1>Registration</h1>
+<tr><td>Login Name</td><td><input type="text" name="l"></td></tr>
+	<tr><td>Password</td><td><input type="password" name="p"></td></tr>
+	<tr><td>Age</td><td><input type="text" name="a"></td></tr>
+	<tr><td>Gender</td><td><input type="radio" value="M" name="q">M
+	<input type="radio" value="F" name="q">F</td></tr>
+	<tr><td>Select Country</td>
+	<td><select name="Role">
+<option> India </option>
+	<option>USA</option>
+	<option>Australia </option>
+	</select></td></tr>
+	<tr><td>Address</td><td><textarea rows="4" cols="10" name="ad"></textarea></td></tr>
+	<tr><td>Email</td><td><input type="text" name="e"></td></tr>
+	<tr><td></td><td><input type="submit" value="Submit"></td></tr>
+	</table>
+	</center>
+		</form>
+</body>
+</html>
+
+HOME HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <h1><font face="Times new Roman" color="pink">WELCOME User,you're IN</font></h1>
+</body>
+</html>
+
+ERROR HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1><font color="red">Registration Failed .. Blank Values ..</font></h1>
+</body>
+</html>
+
+SERVLET
+
+package com.dsrc;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class DisplayServlet
+ */
+@WebServlet("/DisplayServlet")
+public class DisplayServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		PrintWriter out=response.getWriter();
+		String q=request.getParameter("l");
+		String w=request.getParameter("p");
+		String e=request.getParameter("a");
+		String r=request.getParameter("Role");
+		String t=request.getParameter("ad");
+		String y=request.getParameter("q");
+		String p=request.getParameter("e");
+		if(q.length()==0||w.length()==0||e.length()==0||r.length()==0||t.length()==0||y.length()==0||p.length()==0)
+		{
+			response.sendRedirect("error.html");
+		}
+		else
+		{
+			out.println("<html><body><form action=home.html>"
+					+ q+"<br>"
+							+ w+"<br>"
+									+e+ "<br>"
+									+ r+"<br>"
+									+ t+"<br>"
+									+ y+"<br>"
+											+ p+"<br>"
+													+ "<input type=submit value=Submit>"
+					+ "</form></body></html>");
+		}
+			//response.sendRedirect("home.html");
+	}
+
+}

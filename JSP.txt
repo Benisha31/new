@@ -1,0 +1,136 @@
+JSP||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+1)
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form>
+Enter Name<input type="text" name="name">
+<input type="submit" value="Submit">
+</form>
+<%!String name;%>
+<%
+if(request.getParameter("name")!=null)
+	name=request.getParameter("name");
+%>
+Welcome User <%=name %>
+</body>
+</html>
+
+2))))))))))))))))))))))))))))))))))))))))))
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<FORM action="index.jsp" METHOD="POST">
+            Login name:<INPUT TYPE="TEXT" NAME="username"><br>
+            Password:<input type="password" name="password">
+            
+            <INPUT TYPE="SUBMIT" value="Login" >
+</FORM>
+
+<%	if(request.getParameter("username")!=null  && request.getParameter("password") != null)
+	{
+		if(request.getParameter("username").equals("sa") &&request.getParameter("password").equals("pass"))
+		{
+		out.println(" valid User ") ; }
+	else 
+		{out.print("Invalid user");}
+	}
+%> 
+</body>
+</html>
+3))))))))))))))))))))))))))))))))))))))))))))))))
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<FORM action="index.jsp" METHOD="POST">
+            Login name:<INPUT TYPE="TEXT" NAME="username"><br>
+            Password:<input type="password" name="password">
+            
+            <INPUT TYPE="SUBMIT" value="Login" >
+</FORM>
+
+<%	if(request.getParameter("username")!=null  && request.getParameter("password") != null)
+	{
+		if(request.getParameter("username").equals("sa") &&request.getParameter("password").equals("pass"))
+		{
+		out.println("<h2><font color=Green> <b>valid User</b></font></h2> ") ; }
+	else 
+		{out.print("<font color=red><i> Invalid user</i></font>");}
+	}
+%> 
+</body>
+</html>
+
+4)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form>
+Enter Number<input type="number" name="name">
+		<input type="submit" value="Show"> 
+
+<table border="1"  width=30%>
+<%
+if(request.getParameter("name")!=null)
+{
+ 
+int n=Integer.parseInt(request.getParameter("name"));
+for(int k=1;k<=10;k++)
+		{%>
+			<tr><td><%= k%></td><td>X</td><td><%=n %></td><td>=</td><td><%= n*k%></tr></tr>
+			<%}} %>	
+			</table>	
+			
+			
+				</form>	 
+</body>
+</html>
+5))))))))))))))))))))))))))))))))))))))))))))))
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+Select Country <select name="value">
+<option>NA , India , China , Pakistan , France </option>
+	<option>User</option>
+	</select>
+
+
+</body>
+</html>
